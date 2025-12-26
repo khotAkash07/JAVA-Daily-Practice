@@ -12,11 +12,10 @@ class MyThread extends Thread{
     }
 }
 public class DemonThreadApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyThread t1 = new MyThread();
         t1.setDaemon(true);
         t1.start();
-
         System.out.println("End Main Thread");
     }
 }

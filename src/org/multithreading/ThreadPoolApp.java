@@ -37,22 +37,3 @@ public class ThreadPoolApp {
         System.out.println("Everything is finish running");
     }
 }
-
-
-
-add
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

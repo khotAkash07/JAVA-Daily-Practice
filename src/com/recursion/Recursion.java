@@ -1,4 +1,4 @@
-package com.DSA;
+package com.recursion;
 
 public class Recursion {
     static int sum;

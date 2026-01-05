@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Student</title>
+
+   <script>
+    function validateForm() {
+        const name = document.getElementById("name").value;
+        const rollNumInput = document.getElementById("rollNum").value;
+
+        if (name.trim() === "") {
+            alert("Student name cannot be empty.");
+            return false;
+        }
+
+        // --- NEW VALIDATION FOR ROLL NUMBER ---
+        if (rollNumInput.trim() === "") {
+            alert("Student roll number cannot be empty.");
+            return false;
+        }
+        if (isNaN(rollNumInput) || !Number.isInteger(Number(rollNumInput))) {
+            alert("Roll number must be an integer.");
+            return false;
+        }
+        // ------------------------------------
+
+        return true;
+    }
+</script>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+        label {
+          display: block;
+          margin-bottom: 8px;
+        }
+        input[type="text"] {
+          width: 300px;
+          padding: 8px;
+          margin-bottom: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<h1>Add Student</h1>
+<form action="addStudent" method="post" onsubmit="return validateForm()">
+    <label for="rollNum">Enter Student Roll Number</label>
+    <input
+            type="number"
+            id="rollNum"
+            name="rollNum"
+            required
+
+    /></br>
+    <label for="name">Enter Student Name</label>
+    <input
+            type="text"
+            id="name"
+            name="name"
+            required
+
+    /></br>
+    <button type="submit">Add Student</button>
+</form>
+</body>
+</html>

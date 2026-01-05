@@ -15,7 +15,7 @@ public class FirstDemo {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, "root", "root");
             if (conn != null) {
-                PreparedStatement ps = conn.prepareStatement("select * from employee");
+                PreparedStatement ps = conn.prepareStatement("select * from employee where id = "+1);
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {

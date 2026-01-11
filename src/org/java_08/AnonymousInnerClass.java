@@ -12,20 +12,16 @@ public class AnonymousInnerClass {
             public void one() {
                 System.out.println("This is one method");
             }
-
             @Override
             public void two() {
 
                 System.out.println("This is two method");
                 extraMethod();
             }
-
             public void extraMethod(){
                 System.out.println("This is extra method");
             }
-
         };
-
         abc.one();
         abc.two();
 

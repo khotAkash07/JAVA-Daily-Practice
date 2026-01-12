@@ -24,5 +24,8 @@ public class LambdaExpressionApp {
                 .filter(isEven)
                 .forEach(System.out::println);
 
+        numbers.stream()
+                .map(n -> n*n)
+                .forEach(System.out::println);
     }
 }

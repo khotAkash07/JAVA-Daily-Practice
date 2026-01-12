@@ -1,5 +1,7 @@
 package com.java.java_08;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Predicate;
 
 @FunctionalInterface
@@ -15,6 +17,12 @@ public class LambdaExpressionApp {
         Predicate<Integer> isEven = (a) -> a % 2 == 0;
         boolean b = isEven.test(13);
         System.out.println(b?"Even":"Odd");
+
+
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        numbers.stream()
+                .filter(isEven)
+                .forEach(System.out::println);
 
     }
 }

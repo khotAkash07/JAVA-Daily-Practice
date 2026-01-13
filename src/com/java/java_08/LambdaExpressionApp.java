@@ -3,6 +3,7 @@ package com.java.java_08;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 @FunctionalInterface
 interface MathOperations {
@@ -27,5 +28,11 @@ public class LambdaExpressionApp {
         numbers.stream()
                 .map(n -> n*n)
                 .forEach(System.out::println);
+
+        List<Integer> myList = numbers.stream().map(x -> x*x).toList();
+        System.out.println(myList);
+
+        List<Integer> myList2 = numbers.stream().map(x -> x*x).collect(Collectors.toList());
+        System.out.println(myList);
     }
 }

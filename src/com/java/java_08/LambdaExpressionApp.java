@@ -2,6 +2,7 @@ package com.java.java_08;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -34,5 +35,20 @@ public class LambdaExpressionApp {
 
         List<Integer> myList2 = numbers.stream().map(x -> x*x).collect(Collectors.toList());
         System.out.println(myList);
+
+        boolean b1 = numbers.stream().anyMatch(x -> x%2==0);
+        System.out.println(b1);
+
+        boolean b2 = numbers.stream().allMatch(x -> x%2==0);
+        System.out.println(b2);
+
+        boolean b3 = numbers.stream().noneMatch(x -> x%2==0);
+        System.out.println(b3);
+
+        Optional<Integer> myNum = numbers.stream().skip(3).findFirst();
+        System.out.println(myNum.get());
+
+        int anyNum = numbers.stream().skip(2).findAny().get();
+        System.out.println(anyNum);
     }
 }

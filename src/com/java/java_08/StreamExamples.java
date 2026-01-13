@@ -1,9 +1,6 @@
 package com.java.java_08;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class StreamExamples {
@@ -39,6 +36,23 @@ public class StreamExamples {
             System.out.println(integer);
         }
 
+        List<String> strList = Arrays.asList(
+          "Hello World",
+                "Java Stream Are PowerFull",
+                "Used in java 8"
+        );
 
+        List<String> fullStrlist = strList.stream().flatMap(x -> Arrays.stream(x.split(" ")).map(String::toLowerCase)).toList();
+        System.out.println(fullStrlist);
+        System.out.println();
+        String strList2 = String.join(" ", fullStrlist);
+        System.out.println(strList2);
+
+        //forEachOrdered
+        List<Integer> arrList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        arrList.parallelStream().forEach(x -> System.out.print(x+" "));
+        System.out.println();
+        List<Integer> arrList2 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        arrList.parallelStream().forEachOrdered(x -> System.out.print(x+" "));
     }
 }
